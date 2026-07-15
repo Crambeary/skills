@@ -2,17 +2,23 @@
 
 Personal agent skills, installable via [`npx skills`](https://github.com/vercel-labs/skills).
 
+[![skills.sh](https://skills.sh/b/Crambeary/skills)](https://skills.sh/Crambeary/skills)
+
 ## Install
 
 ```bash
-npx skills add Crambeary/skills
+npx skills@latest add Crambeary/skills
 ```
 
 Install a specific skill:
 
 ```bash
-npx skills add Crambeary/skills --skill <skill-name>
+npx skills@latest add Crambeary/skills --skill <skill-name>
 ```
+
+## Reference
+
+- **[explain-diff-html](skills/explain-diff-html/SKILL.md)** — Turn a diff, branch, or PR into a rich, self-contained HTML explainer: background, intuition, a code walkthrough, and a quiz.
 
 ## Layout
 
@@ -29,7 +35,19 @@ skills/
 ## Adding a new skill
 
 ```bash
-npx skills init skills/<skill-name>
+npx skills@latest init skills/<skill-name>
 ```
 
 Then edit the generated `SKILL.md`.
+
+## Local development
+
+To iterate on skills in this repo with live changes, symlink them into your
+local agent skill directories instead of reinstalling after every edit:
+
+```bash
+scripts/link-skills.sh
+```
+
+This links each skill into `~/.claude/skills` and `~/.agents/skills`. Re-run
+it after adding, removing, or renaming a skill.
